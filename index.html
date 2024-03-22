@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loveCalculator.js</title>
+  </head>
+  <body
+    class="bg-orange-300 dark:bg-slate-800 h-screen flex items-center justify-center dark:text-white text-center flex-col"
+  >
+    <div
+      class="mx-auto w-[80vh] h-[65vh] max-h-[350px] bg-white dark:bg-black rounded-2xl"
+    >
+      <h1 class="my-3 text-xl">loveCalculator.js</h1>
+      <form id="inputForm">
+        <label for="yourName">Your Name:</label> <br />
+        <input
+          type="text"
+          id="yourName"
+          class="bg-transparent border border-gray-600 ring-0 p-2 my-2 rounded-xl text-center"
+        />
+        <br />
+        <label for="partnerName">Partner's Name:</label> <br />
+        <input
+          type="text"
+          id="partnerName"
+          class="bg-transparent border border-gray-600 p-2 my-2 rounded-xl text-center"
+        />
+        <br />
+        <button type="submit" class="my-3 bg-pink-800 px-10 py-3 rounded-xl">
+          Submit
+        </button>
+      </form>
+      <p class="mt-5 text-xl" id="result"></p>
+    </div>
+
+    <footer class="mt-[20vh]">
+      <p>
+        This site is open source. Licensed under
+        <a
+          href="https://github.com/fluentmoheshwar/loveCalculator.js/blob/main/LICENSE/"
+          >MIT License</a
+        >
+      </p>
+      <p>No personal data is shared with server.</p>
+      <p>Developed by Moheshwar Amarnath Biswas</p>
+    </footer>
+    <script type="module" src="./src/js/main.js"></script>
+  </body>
+</html>

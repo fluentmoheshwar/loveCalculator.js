@@ -1,0 +1,45 @@
+import "../css/style.css";
+
+// access required elements
+const form = document.getElementById("inputForm");
+const yourName = document.getElementById("yourName").value;
+const partnerName = document.getElementById("partnerName").value;
+const resultPlaceholder = document.getElementById("result");
+
+function calculateLove(yourName, partnerName) {
+  // prepare name strings for calculating.
+  yourName = yourName.toLowerCase().trim().replace(/\s/g, "");
+  partnerName = partnerName.toLowerCase().trim().replace(/\s/g, "");
+
+  let percent = 0;
+
+  // Add 10% for each letter that is common in both names
+  for (let letter of yourName) {
+    if (partnerName.indexOf(letter) > -1) {
+      percent += 10;
+    }
+  }
+  // Add 20% if the first letters of the names are the same
+  if (yourName[0] === partnerName[0]) {
+    percent += 20;
+  }
+  // Add 15% if the last letters of the names are the same
+  if (yourName[-1] === partnerName[-1]) {
+    percent += 15;
+  }
+  // Add a random number between 0 and 20 to the percentage
+  percent += Math.floor(Math.random() * 21);
+
+  // Limit percentage to 100
+  if (percent > 100) {
+    percent = 100;
+  }
+
+  return percent;
+}
+
+form.onsubmit = (event) => {
+  event.preventDefault();
+  const result = calculateLove(yourName, partnerName);
+  resultPlaceholder.innerText = `Love percentage is ${result}%`;
+};
