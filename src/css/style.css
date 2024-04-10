@@ -7,3 +7,8 @@
     @apply bg-pink-800 text-white
   }
 }
+@layer components {
+  a {
+    @apply text-pink-700 hover:text-black underline hover:no-underline dark:text-pink-400 hover:dark:text-white;
+  }
+}
