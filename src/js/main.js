@@ -2,8 +2,6 @@ import "../css/style.css";
 
 // access required elements
 const form = document.getElementById("inputForm");
-const yourName = document.getElementById("yourName").value;
-const partnerName = document.getElementById("partnerName").value;
 const resultPlaceholder = document.getElementById("result");
 
 function calculateLove(yourName, partnerName) {
@@ -40,6 +38,8 @@ function calculateLove(yourName, partnerName) {
 
 form.onsubmit = (event) => {
   event.preventDefault();
+  const yourName = document.getElementById("yourName").value;
+  const partnerName = document.getElementById("partnerName").value;
   const result = calculateLove(yourName, partnerName);
   resultPlaceholder.innerText = `Love percentage is ${result}%`;
 };
