@@ -6,10 +6,10 @@
     <title>loveCalculator.js</title>
   </head>
   <body
-    class="bg-orange-300 dark:bg-slate-800 h-screen flex items-center justify-center dark:text-white text-center flex-col"
+    class="dark:bg-slate-800 h-screen flex items-center justify-center dark:text-white text-center flex-col"
   >
     <div
-      class="mx-auto w-[80vh] h-[65vh] max-h-[350px] bg-white dark:bg-black rounded-2xl"
+      class="mx-auto mt-[5rem] p-5 bg-gray-300 dark:bg-black rounded-2xl"
     >
       <h1 class="my-3 text-xl">loveCalculator.js</h1>
       <form id="inputForm">
@@ -27,14 +27,15 @@
           class="bg-transparent border border-gray-600 p-2 my-2 rounded-xl text-center"
         />
         <br />
-        <button type="submit" class="my-3 bg-pink-800 px-10 py-3 rounded-xl">
+        <button type="submit" class="my-3 bg-pink-800 text-white px-10 py-3 rounded-xl">
           Submit
         </button>
       </form>
       <p class="mt-5 text-xl" id="result"></p>
     </div>
 
-    <footer class="mt-[20vh]">
+    <div class="flex-grow"></div>
+    <footer class="mb-6">
       <p>
         This site is open source. Licensed under
         <a
