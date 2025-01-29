@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 @layer base {
   *::selection {
@@ -9,6 +7,6 @@
 }
 @layer components {
   a {
-    @apply text-pink-700 hover:text-black underline hover:no-underline dark:text-pink-400 hover:dark:text-white;
+    @apply text-pink-700 hover:text-black underline hover:no-underline dark:text-pink-400 dark:hover:text-white;
   }
 }
