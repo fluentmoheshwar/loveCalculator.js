@@ -43,3 +43,21 @@ form.onsubmit = (event) => {
   const result = calculateLove(yourName, partnerName);
   resultPlaceholder.innerText = `Love percentage is ${result}%`;
 };
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.innerText = "❤️";
+  heart.classList.add("heart", "text-red-500", "text-lg");
+  document.body.appendChild(heart);
+
+  const size = Math.random() * 2 + 1 + "rem";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = size;
+  heart.style.top = "-10%";
+  heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+setInterval(createHeart, 300);
