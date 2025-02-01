@@ -3,6 +3,7 @@ import "../css/style.css";
 // access required elements
 const form = document.getElementById("inputForm");
 const resultPlaceholder = document.getElementById("result");
+const date = new Date();
 
 function calculateLove(yourName, partnerName) {
   // prepare name strings for calculating.
@@ -36,13 +37,12 @@ function calculateLove(yourName, partnerName) {
   return percent;
 }
 
-form.onsubmit = (event) => {
-  event.preventDefault();
+function handleSubmit() {
   const yourName = document.getElementById("yourName").value;
   const partnerName = document.getElementById("partnerName").value;
   const result = calculateLove(yourName, partnerName);
   resultPlaceholder.innerText = `Love percentage is ${result}%`;
-};
+}
 
 function createHeart() {
   const heart = document.createElement("div");
@@ -60,4 +60,15 @@ function createHeart() {
     heart.remove();
   }, 5000);
 }
-setInterval(createHeart, 300);
+
+
+form.onsubmit = (event) => {
+  event.preventDefault();
+  resultPlaceholder.innerText = `Calculating...`;
+  setTimeout(handleSubmit, 2000);
+  setInterval(createHeart, 300);
+};
+
+if(date.getMonth() === 1 && date.getDate() === 14) {
+  document.getElementById("valentine").classList.remove("hidden");
+}
