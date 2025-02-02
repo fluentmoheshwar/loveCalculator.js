@@ -466,6 +466,24 @@ export default defineConfig({
             sizes: "1024x1024",
           },
         ],
+        screenshots: [
+          {
+            src: "lovecalculatorjs.vercel.app_(Asus Zenbook Fold).png",
+            sizes: "1919x1279",
+          },
+          {
+            src: "lovecalculatorjs.vercel.app_(Pixel 7).png",
+            sizes: "1082x2402",
+          },
+        ],
+        orientation: "any",
+        launch_handler: {
+          url: "/",
+        },
+        edge_side_panel: {
+          preferred_width: 300,
+        },
+        display_override: ["window-controls-overlay"],
       },
     }),
   ],
