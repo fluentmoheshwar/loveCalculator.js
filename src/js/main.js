@@ -40,8 +40,15 @@ function calculateLove(yourName, partnerName) {
 function handleSubmit() {
   const yourName = document.getElementById("yourName").value;
   const partnerName = document.getElementById("partnerName").value;
-  const result = calculateLove(yourName, partnerName);
-  resultPlaceholder.innerText = `Love percentage is ${result}%`;
+  const obj = {yourName, partnerName};
+  if (localStorage.getItem(JSON.stringify(obj))) {
+    const percentage = JSON.parse(localStorage.getItem(JSON.stringify(obj)));
+    resultPlaceholder.innerText = `Love percentage is ${percentage}%`;
+  } else {
+    const percentage = calculateLove(yourName, partnerName);
+    localStorage.setItem(JSON.stringify(obj), percentage);
+    resultPlaceholder.innerText = `Love percentage is ${percentage}%`;
+  }
 }
 
 function createHeart() {
