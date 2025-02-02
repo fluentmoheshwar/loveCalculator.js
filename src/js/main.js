@@ -12,6 +12,10 @@ function calculateLove(yourName, partnerName) {
 
   let percent = 0;
 
+  if (yourName === "" || partnerName === "") {
+    return 0;
+  }
+
   // Add 10% for each letter that is common in both names
   for (let letter of yourName) {
     if (partnerName.indexOf(letter) > -1) {
